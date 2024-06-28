@@ -6,7 +6,7 @@
 /*   By: mmuhaise <mmuhaise@student.42beirut.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 21:29:59 by mmuhaise          #+#    #+#             */
-/*   Updated: 2024/06/28 21:58:43 by mmuhaise         ###   ########.fr       */
+/*   Updated: 2024/06/28 22:20:47 by mmuhaise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	p(t_node **src, t_node **dest)
 	if (src == NULL)
 		return ;
 	temp = pop(src);
-	insert_at_end(dest, temp);
+	insert_at_beginning(dest, temp);
 }
