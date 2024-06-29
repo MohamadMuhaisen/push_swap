@@ -1,10 +1,10 @@
 NAME            = push_swap
 
 CC              = gcc
-CFLAGS          = -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror
 RM              = rm -rf
 
-SRC             = push_swap linkedlist operations
+SRC             = push_swap linkedlist operations operations_extended sorting utils
 SRCS            = $(addsuffix .c, $(SRC))
 
 OBJ_DIR         = obj
