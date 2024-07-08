@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuhaise <mmuhaise@student.42beirut.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 18:47:02 by mmuhaise          #+#    #+#             */
-/*   Updated: 2024/06/29 21:12:38 by mmuhaise         ###   ########.fr       */
+/*   Created: 2024/06/29 18:54:45 by mmuhaise          #+#    #+#             */
+/*   Updated: 2024/07/08 14:22:36 by mmuhaise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-int	is_sorted(t_node *stack)
+int	args_len(char **split_args)
 {
-	while (stack->next)
-	{
-		if (stack->data > stack->next->data)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
+	int	i;
+
+	i = 0;
+	while (split_args[i])
+		i++;
+	return (i);
 }
 
-void	sort_three(t_node **stack)
+char	**split_args(int *argc, char **argv, int *tofree)
 {
-	t_node	*max;
+	char	**split_args;
 
-	max = get_max(*stack);
-	if (max == *stack)
-		rotate(*stack);
-	else if ((*stack)->next == max)
-		reverse_rotate(*stack);
-	if ((*stack)->data > (*stack)->next->data)
-		swap(*stack);
+	split_args = ft_split_mult(argv[0], " \t\n");
+	*argc = args_len(split_args) + 1;
+	*tofree = 1;
+	return (split_args);
 }
